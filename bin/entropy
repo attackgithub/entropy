@@ -1,0 +1,3 @@
+cd ~/entropy
+python ~/entropy/entropy.py -h
+
