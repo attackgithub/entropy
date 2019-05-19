@@ -21,7 +21,7 @@ except ImportError as e:
 
 TMP_PATH='/tmp/'
 
-parser=argparse.ArgumentParser(description="Please use entropy exploit just in educational purpose!")
+parser=argparse.ArgumentParser(description="Please use CNVD-2017-02776 exploit just in educational purpose!")
 parser.add_argument("-b","--brand",dest='brand',help="Choose the brand of IP Camera. 1 represents Netwave,2 represents GoAhead.",choices=[1,2],type=int)
 parser.add_argument("-o","--output",dest='outputfile',help="Output into path you input.The default path in dir /tmp",type=str)
 parser.add_argument("-T","--timeout",dest='timeout',help="The default timout for netwave is 300s.",type=int,default=300)
@@ -48,7 +48,7 @@ if args.outputfile:
     logger.setLevel(logging.INFO)
 
 def handlesignal(signum,frame):
-    print(color.Mindyellow+"\nYou choose to stop exploiting.")
+    print(color.Mindyellow+"\nYou choose to stop exploiting!")
     sys.exit(0)
 
 class Color(object):
