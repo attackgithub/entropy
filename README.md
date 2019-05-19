@@ -1,5 +1,14 @@
 # Entropy Exploit (CNVD-2017-02776)
 
+        _______   ____    ____  ____  ______  __
+       / ____/ | / / /   / __ \/ __ \/ __ \ \/ /
+      / __/ /  |/ / /   / /_/ / / / / /_/ /\  / 
+     / /___/ /|  / /___/ _, _/ /_/ / ____/ / /  
+    /_____/_/ |_/_____/_/ |_|\____/_/     /_/   
+
+
+# About entropy exploit
+
     INFO: Entropy Exploit is an IP webcamera 
     exploit also named CNVD-2017-02776 
 
