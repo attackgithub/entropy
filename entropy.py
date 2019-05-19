@@ -449,10 +449,16 @@ def main():
     subprocess.Popen("clear",shell=True)
     fig=pyfiglet.Figlet('slant')
     HEADER=fig.renderText('ENTROPY')
-    VERSION='version:1.0'
+    NAME='Name    : Entropy Exploit'
+    AUTHORI='Writer  : Entynetproject'
+    VERSION='Version : 1.0 (first release)'
+    EXPLOIT='Exploit : CNVD-2017-02776'
     WRITER='https://github.com/entynetproject'
     print(color.Headmagenta+HEADER)
+    print(color.Headmagenta+NAME.center(70))
+    print(color.Headmagenta+AUTHORI.center(70))
     print(color.Headmagenta+VERSION.center(70))
+    print(color.Headmagenta+EXPLOIT.center(70))
     print(color.Headmagenta+WRITER.center(70))
     print(color.Defblue+"Press Ctrl+C to stop ...")
     if args.shodan:
