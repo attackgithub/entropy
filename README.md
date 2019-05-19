@@ -6,6 +6,30 @@
      / /___/ /|  / / / / _, _/ /_/ / ____/ / / 
     /_____/_/ |_/ /_/ /_/ |_|\____/_/     /_/ 
 
+<p align="center">
+  <a href="http://entynetproject.simplesite.com/">
+    <img src="https://img.shields.io/badge/entynetproject-Ivan%20Nikolsky-blue.svg">
+  </a>
+  <a href="https://github.com/entynetproject/entropy/releases">
+    <img src="https://img.shields.io/github/release/entynetproject/entropy.svg">
+  </a>
+  <a href="https://ru.m.wikipedia.org/wiki/Python">
+    <img src="https://img.shields.io/badge/language-python-blue.svg">
+ </a>
+  <a href="https://exploit-db.com/">
+      <img src="https://img.shields.io/badge/exploit-CNVD-red.svg?maxAge=2592000">
+ </a>
+  <a href="https://github.com/entynetproject/entropy/issues?q=is%3Aissue+is%3Aclosed">
+      <img src="https://img.shields.io/github/issues/entynetproject/entropy.svg">
+  </a>
+  <a href="https://github.com/entynetproject/entropy/wiki">
+      <img src="https://img.shields.io/badge/wiki%20-entropy-lightgrey.svg">
+ </a>
+  <a href="https://mobile.twitter.com/entynetproject">
+    <img src="https://img.shields.io/badge/twitter-entynetproject-blue.svg">
+ </a>
+</p>
+
 # About entropy exploit
 
     INFO: Entropy Exploit is an IP webcamera 
