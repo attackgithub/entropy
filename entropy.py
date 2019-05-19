@@ -15,8 +15,6 @@ try:
     import pyfiglet
     import shodan
 
-TMP_PATH='/tmp/'
-
 parser=argparse.ArgumentParser(description="Please use entropy exploit just in educational purpose!")
 parser.add_argument("-b","--brand",dest='brand',help="Choose the brand of IP Camera. 1 represents Netwave,2 represents GoAhead.",choices=[1,2],type=int)
 parser.add_argument("-o","--output",dest='outputfile',help="Output into path you input.The default path in dir /tmp",type=str)
