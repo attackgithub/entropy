@@ -6,6 +6,8 @@ cp entropy /bin
 cp entropy /usr/local/bin
 chmod +x /bin/entropy
 chmod +x /usr/local/bin/entropy
+cd ~/entropy
+pip3 install -r related.txt
 } &> /dev/null
 else
 cd ~
@@ -16,5 +18,7 @@ cp entropy /bin
 cp entropy /usr/local/bin
 chmod +x /bin/entropy
 chmod +x /usr/local/bin/entropy
+cd ~/entropy
+pip3 install -r related.txt
 } &> /dev/null
 fi
