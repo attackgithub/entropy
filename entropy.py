@@ -14,10 +14,6 @@ try:
     import tailer
     import pyfiglet
     import shodan
-except ImportError as e:
-    print("The error occured:%s"%e)
-    print("Try this: pip3 install -r ./related.txt")
-    sys.exit(0)
 
 TMP_PATH='/tmp/'
 
