@@ -33,9 +33,9 @@
 
 # Entropy usage
 
-    usage: entropy.py [-h] [-b {1,2}] [-o OUTPUTFILE] [-T TIMEOUT] [-t TASKS]
-                      [-c COUNT] [-q | -v]
-                      [-i IP | -l INPUTFILE | --shodan SHODAN | --zoomeye ZOOMEYE]
+    usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [-T TIMEOUT] [-t TASKS]
+                   [-c COUNT] [-q | -v]
+                   [-i IP | -l INPUTFILE | --shodan SHODAN | --zoomeye ZOOMEYE]
 
     Please use CNVD-2017-02776 exploit just in educational purpose!
 
