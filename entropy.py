@@ -453,14 +453,34 @@ def main():
     AUTHORI='Writer  : Entynetproject'
     VERSION='Version : 1.0 (first release)'
     EXPLOIT='Exploit : CNVD-2017-02776'
-    WRITER='https://github.com/entynetproject'
+    WRITER=' Github  : https://github.com/entynetproject'
+    SITE='Site    : http://entynetproject.simplesite.com/'
     print(color.Headmagenta+HEADER)
     print(color.Headmagenta+NAME.center(70))
     print(color.Headmagenta+AUTHORI.center(70))
     print(color.Headmagenta+VERSION.center(70))
     print(color.Headmagenta+EXPLOIT.center(70))
     print(color.Headmagenta+WRITER.center(70))
-    print(color.Defblue+"Press Ctrl+C to stop ...")
+    print(color.Headmagenta+SITE.center(70))
+    def load_entropy():
+    print "Loading Source of Entropy ..."
+    source = os.urandom(256)
+    for i in range(3):
+      source += os.urandom(2 ** (21 + i))
+      update_progress(((i + 1.0) / 3.0))
+    print "\n"
+    return source
+    def update_progress(progress):
+    bar_length = 23
+    status = "({}%)".format(str(progress)[2:4])
+    if progress >= 1.0:
+        progress = 1
+        status = "COMPLETE"
+    block = int(round(bar_length * progress))
+    text = "\r{0}\t\t{1}".format("#" * block + " " * (bar_length - block), status)
+    sys.stdout.write(text)
+    sys.stdout.flush()
+    load_entropy()
     if args.shodan:
         try:
             if args.brand==1:
