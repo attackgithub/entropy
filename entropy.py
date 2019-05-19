@@ -16,7 +16,7 @@ try:
     import shodan
     
 except ImportError as e:
-    print("The error occured:%s"%e)
+    print("")
     
 
 TMP_PATH='/tmp/'
