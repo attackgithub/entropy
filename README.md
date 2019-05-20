@@ -66,9 +66,6 @@
 
 # How to execute entropy (as command)
 
-    INFO: Execute entropy exploit as command 
-    only after installing it with install.sh
-
 > entropy -h
 
 # How to execute entropy (as python3)
