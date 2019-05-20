@@ -108,6 +108,19 @@
       --zoomeye ZOOMEYE     Your ZoomEye API Key.You can get help from
                             https://www.zoomeye.org/api
 
+# Entropy exploitation examples
+
+> If you want to exploit a local camera, run
+    
+    entropy -b 1 -i 192.168.1.100:80 -v  
+    
+> If you want to exploit cameras from list, run
+
+    entropy -b 2 -l iplist.txt -v
+    
+> If you want to exploit cameras from database, run
+
+    entropy -b 2 -v --shodan [API key]
 
 # Entropy MIT license
 
