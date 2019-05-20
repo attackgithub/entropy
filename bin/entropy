@@ -23,5 +23,5 @@
 # SOFTWARE.
 
 cd ~/entropy
-python ~/entropy/src/entropy -h
+python3 ~/entropy/src/entropy -h
 
