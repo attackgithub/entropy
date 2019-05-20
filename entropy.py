@@ -75,11 +75,11 @@ def handlesignal(signum,frame):
     sys.exit(0)
 
 class Color(object):
-    Warnred = '\033[31m'
-    Sucgreen = '\033[32m'
-    Defblue = '\033[37m'
-    Headmagenta = '\033[37m'
-    Mindyellow='\033[93m'
+    Warnred = '\033[1;31m'
+    Sucgreen = '\033[1;32m'
+    Defblue = '\033[1;37m'
+    Headmagenta = '\033[1;37m'
+    Mindyellow='\033[1;93m'
     Endlwhites='\033[0m'
 
 color=Color()
