@@ -475,19 +475,11 @@ def main():
     subprocess.Popen("clear",shell=True)
     fig=pyfiglet.Figlet('slant')
     HEADER=fig.renderText('ENTROPY')
-    NAME='Name    : Entropy Exploit'
-    AUTHORI='Writer  : Entynetproject'
-    VERSION='Version : 1.0 (first release)'
-    EXPLOIT='Exploit : CNVD-2017-02776'
-    WRITER=' Github  : https://github.com/entynetproject'
-    SITE='Site    : http://entynetproject.simplesite.com/'
-    print(color.Headmagenta+HEADER.center)
-    print(color.Headmagenta+NAME)
-    print(color.Headmagenta+AUTHORI)
-    print(color.Headmagenta+VERSION)
-    print(color.Headmagenta+EXPLOIT)
-    print(color.Headmagenta+WRITER)
-    print(color.Headmagenta+SITE)
+    VERSION='version:1.0'
+    WRITER='http://entynetproject.simplesite.com/'
+    print(color.Headmagenta+HEADER)
+    print(color.Headmagenta+VERSION.center(70))
+    print(color.Headmagenta+WRITER.center(70))
     if args.shodan:
         try:
             if args.brand==1:
