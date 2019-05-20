@@ -481,13 +481,13 @@ def main():
     EXPLOIT='Exploit : CNVD-2017-02776'
     WRITER=' Github  : https://github.com/entynetproject'
     SITE='Site    : http://entynetproject.simplesite.com/'
-    print(color.Headmagenta+HEADER)
-    print(color.Headmagenta+NAME.center(70))
-    print(color.Headmagenta+AUTHORI.center(70))
-    print(color.Headmagenta+VERSION.center(70))
-    print(color.Headmagenta+EXPLOIT.center(70))
-    print(color.Headmagenta+WRITER.center(70))
-    print(color.Headmagenta+SITE.center(70))
+    print(color.Headmagenta+HEADER.center)
+    print(color.Headmagenta+NAME)
+    print(color.Headmagenta+AUTHORI)
+    print(color.Headmagenta+VERSION)
+    print(color.Headmagenta+EXPLOIT)
+    print(color.Headmagenta+WRITER)
+    print(color.Headmagenta+SITE)
     if args.shodan:
         try:
             if args.brand==1:
