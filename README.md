@@ -44,13 +44,30 @@
     INFO: Entropy Exploit is an IP webcamera 
     exploit also named CNVD-2017-02776 
 
-# How to install dependences
+# How to install entropy
 
-    INFO: This is programs needed for entropy
+    INFO: Entropy files will be installed into /bin and 
+    /usr/local/bin as /bin/entropy and /usr/local/bin/entropy!
 
-> pip3 install -r related.txt
+> cd entropy
 
-# How to execute entropy
+> chmod +x install.sh
+
+> ./install.sh
+
+# How to uninstall entropy
+
+> cd entropy
+
+> chmod +x uninstall.sh
+
+> ./uninstall.sh
+
+# How to execute entropy (command)
+
+> entropy -h
+
+# How to execute entropy (python3)
 
 > cd entropy
 
