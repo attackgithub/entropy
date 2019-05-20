@@ -475,9 +475,9 @@ def main():
     HEADER=fig.renderText('ENTROPY')
     VERSION='version:1.0'
     WRITER='http://entynetproject.simplesite.com/'
-    print(color.Headmagenta+HEADER)
-    print(color.Headmagenta+VERSION.center(70))
-    print(color.Headmagenta+WRITER.center(70))
+    print(color.Headmagenta+HEADER+color.Endlwhites)
+    print(color.Headmagenta+VERSION.center(70)+color.Endlwhites)
+    print(color.Headmagenta+WRITER.center(70)+color.Endlwhites)
     if args.shodan:
         try:
             if args.brand==1:
