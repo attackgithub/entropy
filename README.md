@@ -44,41 +44,17 @@
     INFO: Entropy Exploit is an IP webcamera 
     exploit also named CNVD-2017-02776 
 
-# How to install entropy
-
-    INFO: Entropy files will be installed into
-    /bin and /usr/local/bin like /bin/entropy and 
-    /usr/local/bin/entropy!
-    
-> cd entropy
-
-> chmod +x install.sh
-
-> ./install.sh
-
-# How to uninstall entropy
-
-> cd entropy
-
-> chmod +x uninstall.sh
-
-> ./uninstall.sh
-
-# How to execute entropy (as command)
-
-> entropy -h
-
-# How to execute entropy (as python3)
+# How to execute entropy
 
 > cd entropy
 
 > python3 entropy.py -h
 
-# Entropy usage
+# Entropy global usage
 
-    usage: entropy [-h] [-b {1,2}] [-o OUTPUTFILE] [-T TIMEOUT] [-t TASKS]
-                   [-c COUNT] [-q | -v]
-                   [-i IP | -l INPUTFILE | --shodan SHODAN | --zoomeye ZOOMEYE]
+    usage: entropy.py [-h] [-b {1,2}] [-o OUTPUTFILE] [-T TIMEOUT] [-t TASKS]
+                      [-c COUNT] [-q | -v]
+                      [-i IP | -l INPUTFILE | --shodan SHODAN | --zoomeye ZOOMEYE]
 
     Please use CNVD-2017-02776 exploit just in educational purpose!
 
