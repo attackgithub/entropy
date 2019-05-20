@@ -500,7 +500,7 @@ def main():
                 crack(tmp_ip_list)
         except Exception as e:
             print("The error occured:",e)
-            print("Please use python3 entropy.py -h or entropy -h for more help")
+            print("Please use python3 entropy.py -h for more help")
     elif args.zoomeye:
         try:
             p1,p2=divmod(args.count,20)
@@ -517,7 +517,7 @@ def main():
                 crack(tmp_ip_list)
         except Exception as e:
             print("The error occured:",e)
-            print("Please use python3 entropy.py -h or entropy -h for more help")
+            print("Please use python3 entropy.py -h for more help")
     elif args.inputfile:
         try:
             tmp_ip_list = []
@@ -527,7 +527,7 @@ def main():
             crack(tmp_ip_list)
         except Exception as e:
             print("The error occured:%s"%e)
-            print("Please use python3 entropy.py -h or entropy -h for more help")
+            print("Please use python3 entropy.py -h for more help")
     elif args.ip:
         try:
             ip=args.ip.split(':')[0]
@@ -540,12 +540,12 @@ def main():
             inst.join()
         except Exception as e:
             print("The error occured:%s"%e)
-            print("Please use python3 entropy.py -h or entropy -h for more help")
+            print("Please use python3 entropy.py -h for more help")
     else:
-        print("Please use python3 entropy.py -h or entropy -h for more help")
+        print("Please use python3 entropy.py -h for more help")
 
 if __name__=='__main__':
     try:
         main()
     except Exception:
-        print("Please use python3 entropy.py -h or entropy -h for more help")
+        print("Please use python3 entropy.py -h for more help")
