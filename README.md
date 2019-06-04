@@ -47,7 +47,7 @@
 
 # How to install entropy
 
-    INFO: Entropy files will be installed into /bin and 
+    INFO: Entropy Exploit will be installed into /bin and 
     /usr/local/bin as /bin/entropy and /usr/local/bin/entropy!
 
 > cd entropy
