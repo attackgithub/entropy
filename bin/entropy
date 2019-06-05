@@ -22,5 +22,28 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+cd
+if [[ -d ~/entropy ]]
+then
+{
 cd ~/entropy
+} &> /dev/null
 python3 ~/entropy/src/entropy $1 $2 $3 $4 $5 $6 $7 $8 $9
+else
+{
+ASESR="$( timeout -s SIGTERM 40 curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' )"
+} &> /dev/null
+if [[ "$ASESR" != "" ]]
+then 
+cd
+{
+git clone https://github.com/entynetproject/entropy.git
+cd ~/entropy
+} &> /dev/null
+python3 ~/entropy/src/entropy $1 $2 $3 $4 $5 $6 $7 $8 $9
+else
+cd
+sleep 1
+exit
+fi
+
