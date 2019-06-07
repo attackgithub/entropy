@@ -22,6 +22,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+N="\033[1;37m"
+C="\033[0m"
+
 if [[ -d ~/entropy ]]
 then
 cd ~/entropy/bin
@@ -31,8 +34,12 @@ cp entropy /usr/local/bin
 chmod +x /bin/entropy
 chmod +x /usr/local/bin/entropy
 cd ~/entropy
-pip3 install -r related.txt
 } &> /dev/null
+sleep 1
+echo -e ""$N"Installing dependences..."$C""
+apt-get update
+apt-get install python3-pip
+pip3 install -r related.txt
 else
 cd ~
 {
@@ -43,6 +50,10 @@ cp entropy /usr/local/bin
 chmod +x /bin/entropy
 chmod +x /usr/local/bin/entropy
 cd ~/entropy
-pip3 install -r related.txt
 } &> /dev/null
+sleep 1
+echo -e ""$N"Installing dependences..."$C""
+apt-get update
+apt-get install python3-pip
+pip3 install -r related.txt
 fi
