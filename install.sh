@@ -37,9 +37,14 @@ cd ~/entropy
 } &> /dev/null
 sleep 1
 echo -e ""$N"Installing dependences..."$C""
+if [[ -d /System/Library/CoreServices/Finder.app ]]
+then
+pip3 install -r related.txt
+else
 apt-get update
 apt-get install python3-pip
 pip3 install -r related.txt
+fi
 else
 cd ~
 {
@@ -53,7 +58,12 @@ cd ~/entropy
 } &> /dev/null
 sleep 1
 echo -e ""$N"Installing dependences..."$C""
+if [[ -d /System/Library/CoreServices/Finder.app ]]
+then
+pip3 install -r related.txt
+else
 apt-get update
 apt-get install python3-pip
 pip3 install -r related.txt
+fi
 fi
