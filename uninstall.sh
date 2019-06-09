@@ -22,6 +22,22 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+CE="\033[0m"
+RS="\033[1;31m"
+YS="\033[1;33m"
+
+WHO="$( whoami )"
+
+if [[ "$WHO" != "root" ]]
+then
+sleep 1
+echo -e "$RS"run it as"$CE" "$YS"root"$CE"
+sleep 1
+echo -e "$RS"or use"$CE" "$YS"sudo"$CE"
+sleep 1
+exit
+fi
+
 {
 cd
 rm -r entropy
