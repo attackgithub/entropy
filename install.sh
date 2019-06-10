@@ -52,6 +52,8 @@ chmod +x /usr/local/bin/entropy
 cd ~/entropy
 } &> /dev/null
 sleep 1
+clear
+sleep 1
 echo -e ""$N"Installing dependences..."$C""
 if [[ -d /System/Library/CoreServices/Finder.app ]]
 then
@@ -72,6 +74,8 @@ chmod +x /bin/entropy
 chmod +x /usr/local/bin/entropy
 cd ~/entropy
 } &> /dev/null
+sleep 1
+clear
 sleep 1
 echo -e ""$N"Installing dependences..."$C""
 if [[ -d /System/Library/CoreServices/Finder.app ]]
