@@ -126,7 +126,7 @@
 # Terms of use
 
     This tool is only for educational purposes only.
-    Use this tool only on your own network and never without permission.
+    Use this tool wisely and never without permission.
     I am not responsible for anything you do with this tool.
 
 # Entropy MIT license
