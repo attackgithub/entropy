@@ -39,8 +39,10 @@ try:
     import shodan
     
 except ImportError as e:
-    print("[!] Failed to install some dependences!")
-    
+    print("[!] Failed to install some necessary dependences!")
+    print("[!] Because of this entropy will be work incorrectly!")
+    print("[!] You need to install dependences from related.txt!")
+    print(" ")
 
 TMP_PATH='/tmp/'
 
