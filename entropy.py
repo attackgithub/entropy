@@ -39,7 +39,7 @@ try:
     import shodan
     
 except ImportError as e:
-    print("")
+    print("[!] Failed to install some dependences!")
     
 
 TMP_PATH='/tmp/'
