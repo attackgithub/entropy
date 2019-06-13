@@ -61,6 +61,7 @@ pip3 install -r related.txt
 else
 apt-get update
 apt-get install python3-pip
+pip3 install setuptools
 pip3 install -r related.txt
 fi
 else
@@ -84,6 +85,7 @@ pip3 install -r related.txt
 else
 apt-get update
 apt-get install python3-pip
+pip3 install setuptools
 pip3 install -r related.txt
 fi
 fi
