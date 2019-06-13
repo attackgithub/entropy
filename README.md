@@ -109,7 +109,7 @@
       --zoomeye ZOOMEYE     Your ZoomEye API Key.You can get help from
                             https://www.zoomeye.org/api
 
-# Entropy exploitation examples
+# Entropy exploit examples
 
 > If you want to exploit a local camera, run
     
